@@ -21,7 +21,6 @@ void my_sqort(
     int width,//每个元素的宽度，多少字节
     int (*cmp)(const void* e1,const void*e2) //我们自己定义比较函数
 ) {
-    int temp = 0;
     for (int i = 0; i < length-1;i++) {
         for (int j = 0; j < length - 1 - i;j++) {
             if (cmp((char*)base+j*width,(char*)base+(j+1)*width) > 0 ) {//把void* base转为char* base 原因char* 是1个字节的，方便计算步长
